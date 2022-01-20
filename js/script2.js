@@ -36,8 +36,8 @@ ct(teams);
 
 const teamsFouls = [];
 for (let i = 0; i < teams.length; i++) {
-	const { name, pts } = teams[i];
-	teamsFouls.push({ name, pts });
+	const { name, foulsDrawn } = teams[i];
+	teamsFouls.push({ name, foulsDrawn });
 }
 
 ct(teamsFouls);
