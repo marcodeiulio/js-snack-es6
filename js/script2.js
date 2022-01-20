@@ -20,6 +20,13 @@ const randNum = (min, max) => {
 	return Math.floor(Math.random() * max - min + 1) + min;
 }
 
+const createElement = (domId, tag, text) => {
+	const element = document.getElementById(domId);
+	const tagElement = document.createElement(tag);
+	tagElement.append(text);
+	element.appendChild(tagElement);
+}
+
 //# 
 const teams = [
 	{ name: 'Bayern Monaco', pts: 0, foulsDrawn: 0 },
@@ -34,10 +41,14 @@ for (let i = 0; i < teams.length; i++) {
 }
 ct(teams);
 
+createElement('teams', 'h1', 'Teams Fouls Drawn');
+
+
 const teamsFouls = [];
 for (let i = 0; i < teams.length; i++) {
 	const { name, foulsDrawn } = teams[i];
 	teamsFouls.push({ name, foulsDrawn });
+	createElement('teams-list', 'li', `${teamsFouls[i].name}: ${teamsFouls[i].foulsDrawn}`);
 }
 
 ct(teamsFouls);
