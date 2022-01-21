@@ -10,10 +10,10 @@ ES.: (marco de iulio  => Marco De Iulio)
 */
 
 const students = [
-	{ id: 2342, name: 'marco de iulio', grade: 94 },
-	{ id: 2943, name: 'chiara casadei', grade: 110 },
-	{ id: 2948, name: 'lorenzo caselli', grade: 110 },
-	{ id: 1209, name: 'capretto urlante', grade: 61 },
+	{ id: 234, name: 'marco de iulio', grade: 94 },
+	{ id: 296, name: 'chiara casadei', grade: 110 },
+	{ id: 253, name: 'lorenzo caselli', grade: 110 },
+	{ id: 119, name: 'capretto urlante', grade: 61 },
 ];
 
 // #1
@@ -24,8 +24,15 @@ console.log(names);
 
 // #2
 const bestStudents = students.filter((student, index) => {
-	if (students[index].grade > 70) return students[index];
+	if (student.grade > 70) return student;
 })
 
 console.log('The best students are: ');
 console.log(bestStudents);
+
+// #3
+const greaterStudents = students.filter((student) => {
+	if (student.grade > 70 && student.id > 120) return student;
+});
+console.log('The students with grade > 70 and id > 120 are: ');
+console.log(greaterStudents);
