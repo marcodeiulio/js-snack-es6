@@ -23,7 +23,7 @@ const names = students.map((student) => {
 console.log(names);
 
 // #2
-const bestStudents = students.filter((student, index) => {
+const bestStudents = students.filter((student) => {
 	if (student.grade > 70) return student;
 })
 
