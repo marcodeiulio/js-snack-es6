@@ -7,31 +7,37 @@ Stampare in console la bici con peso minore utilizzando destructuring e template
 Stampare in pagina oltre che in console! 
 */
 
-const cs = (argument) => {
-	return console.log(argument);
-}
-const ct = (argument) => {
-	return console.table(argument);
+//# Functions
+const createElement = (domId, tag, text) => {
+	const element = document.getElementById(domId);
+	const tagElement = document.createElement(tag);
+	tagElement.append(text);
+	element.appendChild(tagElement);
 }
 
+//# Program
 const bikes = [
-	{ nome: 'Alchemy Bikes', peso: 500 },
-	{ nome: 'Carrera Bicycles', peso: 550 },
-	{ nome: 'CIOCC', peso: 450 },
-	{ nome: 'Cipollini', peso: 680 },
-	{ nome: 'Rotwild', peso: 900 },
+	{ name: 'Alchemy Bikes', weight: 500 },
+	{ name: 'Carrera Bicycles', weight: 550 },
+	{ name: 'CIOCC', weight: 450 },
+	{ name: 'Cipollini', weight: 680 },
+	{ name: 'Rotwild', weight: 900 },
 ];
 
-const pesi = [];
-for (let i = 0; i < bikes.length; i++) {
-	const { peso } = bikes[i];
-	pesi.push(peso);
-}
-ct(pesi);
+let lightestBike = 0;
+bikes.forEach((bike) => {
+	const { weight } = bike;
+	if (lightestBike === 0) lightestBike = weight;
+	else if (weight < lightestBike) lightestBike = weight
+})
+console.log(lightestBike);
 
-const min = Math.min(...pesi);
-cs(min);
+let bikeName;
+bikes.forEach((bike) => {
+	if (bike.weight === lightestBike) bikeName = bike.name;
+});
+console.log(bikeName);
 
-for (let i = 0; i < bikes.length; i++) {
-	if (bikes[i].peso === min) console.log(`La marca che costruisce la bici di minor peso è ${bikes[i].nome}, con un peso pari a ${min}g.`);
-}
+const bikeAnnounce = `The lightest bike is ${bikeName} and it weights ${lightestBike}g.`
+
+createElement('bikes', 'h3', bikeAnnounce);
