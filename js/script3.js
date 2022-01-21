@@ -7,11 +7,18 @@ Usiamo i nuovi metodi degli array visti oggi in classe.
 
 const names = ['Diego Bianchi', 'Andrea Pennacchi', 'Geralt di Rivia', 'Yennefer di Vengerberg', 'Francesco Costa', 'Alessandro Masala'];
 
-const selector = (array, min, max) => {
+// # Soluzione con forEach
+/* const selector = (array, min, max) => {
 	selectedArray = [];
 	array.forEach((item, index) => {
 		if (index >= min && index <= max) selectedArray.push(item);
 	});
+	return selectedArray;
+} */
+
+// # Soluzione con .filter()
+const selector = (array, min, max) => {
+	const selectedArray = array.filter((item, index) => (index >= min && index <= max));
 	return selectedArray;
 }
 
