@@ -27,7 +27,7 @@ const createElement = (domId, tag, text) => {
 	element.appendChild(tagElement);
 }
 
-//# 
+//# Program
 const teams = [
 	{ name: 'Bayern Monaco', pts: 0, foulsDrawn: 0 },
 	{ name: 'AFC Richmond', pts: 0, foulsDrawn: 0 },
