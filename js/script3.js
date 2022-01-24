@@ -11,7 +11,7 @@ const names = ['Diego Bianchi', 'Andrea Pennacchi', 'Geralt di Rivia', 'Yennefer
 const selector = (array, min, max) => {
 	selectedArray = [];
 	array.forEach((item, index) => {
-		if (index >= min && index <= max) return selectedArray.push(item);
+		if (index >= min && index <= max) selectedArray.push(item);
 	});
 	return selectedArray;
 }
